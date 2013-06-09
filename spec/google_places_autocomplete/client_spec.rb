@@ -11,19 +11,17 @@ describe GooglePlacesAutocomplete::Client do
     @client.api_key.should == "foobar"
   end
   
-  context "request an autocomplete with location bias" do
-    use_vcr_cassette 'location_bias'
+  context "request an autocomplete with location bias", :vcr => { :cassette_name => 'location_bias' } do
 
     it 'should request autocomplete' do    
       @client = GooglePlacesAutocomplete::Client.new(:api_key => "foobar")
       @autocomplete = @client.autocomplete(:lat => 40.606654, :lng => -74.036865, :input => "coffee", :types => "establishment", :radius => 50)
-      @autocomplete.predictions.size.should == 2
-      @autocomplete.predictions.first.description.should == "Narrows Coffee Shop, 4th Avenue, NY, United States"
+      @autocomplete.predictions.size.should == 5
+      @autocomplete.predictions.first.description.should == "The Coffee Foundry, West 4th Street, New York, NY, United States"
     end
   end
 
-  context "request an autocomplete" do
-    use_vcr_cassette 'autocomplete'
+  context "request an autocomplete", :vcr => { :cassette_name => 'autocomplete' } do
 
     it 'should request autocomplete' do    
       @client = GooglePlacesAutocomplete::Client.new(:api_key => "foobar")
@@ -33,8 +31,7 @@ describe GooglePlacesAutocomplete::Client do
     end
   end
   
-  context "request an autocomplete with bounds" do
-    use_vcr_cassette 'with_bounds'
+  context "request an autocomplete with bounds", :vcr => { :cassette_name => 'with_bounds' } do
 
     it 'should request autocomplete with bounds parameter' do    
       @client = GooglePlacesAutocomplete::Client.new(:api_key => "foobar")
@@ -42,7 +39,7 @@ describe GooglePlacesAutocomplete::Client do
                                            :sw_bounds => {:lat => 40.606654, :lng => -74.036865}, 
                                            :ne_bounds => {:lat => 40.744655, :lng => -73.831558})
       
-      @autocomplete.predictions.size.should == 0
+      @autocomplete.predictions.size.should == 2
     end
   end
 end

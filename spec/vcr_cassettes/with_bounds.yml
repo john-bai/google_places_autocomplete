@@ -1,33 +1,113 @@
 --- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: https://maps.googleapis.com:443/maps/api/place/autocomplete/json?bounds=40.606654%2C-74.036865%7C40.744655%2C-73.831558&input=Peter%20Luger&sensor=false&types=establishment&key=foobar
+http_interactions: 
+- request: 
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/autocomplete/json?sensor=false&input=Peter%20Luger&bounds=40.606654%2C-74.036865%7C40.744655%2C-73.831558&types=establishment&key=foobar
     body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+      encoding: US-ASCII
+      string: ""
+    headers: {}
+
+  response: 
+    status: 
       code: 200
       message: OK
     headers: 
-      expires: 
-      - Mon, 06 Jun 2011 02:57:39 GMT
       content-type: 
       - application/json; charset=UTF-8
-      x-xss-protection: 
-      - 1; mode=block
-      server: 
-      - mafe
       date: 
-      - Mon, 06 Jun 2011 02:52:39 GMT
-      vary: 
-      - Accept-Language
+      - Sun, 09 Jun 2013 08:19:13 GMT
+      expires: 
+      - Sun, 09 Jun 2013 08:24:13 GMT
       cache-control: 
       - public, max-age=300
-    body: |
-      {
-         "predictions" : [],
-         "status" : "ZERO_RESULTS"
-      }
+      vary: 
+      - Accept-Language
+      server: 
+      - mafe
+      x-xss-protection: 
+      - 1; mode=block
+      x-frame-options: 
+      - SAMEORIGIN
+      connection: 
+      - close
+    body: 
+      encoding: US-ASCII
+      string: |
+        {
+           "predictions" : [
+              {
+                 "description" : "Peter Luger Steak House, Broadway, Brooklyn, NY, United States",
+                 "id" : "89909a88347293c913c0066a69a9e15da692c514",
+                 "matched_substrings" : [
+                    {
+                       "length" : 11,
+                       "offset" : 0
+                    }
+                 ],
+                 "reference" : "ClRMAAAAg-3RLtjUJaweCgiLlw8ixvffj1WOhXysenxFetimHgVfOh5w4t2Vj6jQ8UVyuLJwANaW8dNt9LG2jtfyRoAA9MnSkdnECaW6P5n2be7lVCwSEP2bFmbfC6F22zqHxoaF4xYaFIbSS809Fip_668th0qlc0w0_l1n",
+                 "terms" : [
+                    {
+                       "offset" : 0,
+                       "value" : "Peter Luger Steak House"
+                    },
+                    {
+                       "offset" : 25,
+                       "value" : "Broadway"
+                    },
+                    {
+                       "offset" : 35,
+                       "value" : "Brooklyn"
+                    },
+                    {
+                       "offset" : 45,
+                       "value" : "NY"
+                    },
+                    {
+                       "offset" : 49,
+                       "value" : "United States"
+                    }
+                 ],
+                 "types" : [ "establishment" ]
+              },
+              {
+                 "description" : "Peter Luger, Northern Boulevard, Great Neck, NY, United States",
+                 "id" : "4bc97734fc2512e98b901235bb2e43d693b6e23c",
+                 "matched_substrings" : [
+                    {
+                       "length" : 11,
+                       "offset" : 0
+                    }
+                 ],
+                 "reference" : "ClRMAAAAkgXqxo5M_CtiD0rtSPSeuEeMVcCRSPTUIp-ySBHisQcQfP_Kj-qfelpO-0H3Z4-snjA-JN7DmS7f7sG7DLnV0y53s68iHHuPkfkA0HS-KjcSEKqcEA5LdxhFCKs1yRHlVFUaFHwTfwoaDKaX7-CjB-hrYZzuAUnN",
+                 "terms" : [
+                    {
+                       "offset" : 0,
+                       "value" : "Peter Luger"
+                    },
+                    {
+                       "offset" : 13,
+                       "value" : "Northern Boulevard"
+                    },
+                    {
+                       "offset" : 33,
+                       "value" : "Great Neck"
+                    },
+                    {
+                       "offset" : 45,
+                       "value" : "NY"
+                    },
+                    {
+                       "offset" : 49,
+                       "value" : "United States"
+                    }
+                 ],
+                 "types" : [ "establishment" ]
+              }
+           ],
+           "status" : "OK"
+        }
 
     http_version: "1.1"
+  recorded_at: Sun, 09 Jun 2013 08:19:13 GMT
+recorded_with: VCR 2.5.0

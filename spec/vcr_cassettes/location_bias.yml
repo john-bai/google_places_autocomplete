@@ -1,94 +1,211 @@
 --- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: https://maps.googleapis.com:443/maps/api/place/autocomplete/json?types=establishment&radius=50&input=coffee&location=40.606654%2C-74.036865&sensor=false&key=foobar
+http_interactions: 
+- request: 
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/autocomplete/json?location=40.606654%2C-74.036865&radius=50&sensor=false&input=coffee&types=establishment&key=foobar
     body: 
-    headers: 
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+      encoding: US-ASCII
+      string: ""
+    headers: {}
+
+  response: 
+    status: 
       code: 200
       message: OK
     headers: 
-      expires: 
-      - Wed, 03 Aug 2011 15:22:32 GMT
       content-type: 
       - application/json; charset=UTF-8
-      x-xss-protection: 
-      - 1; mode=block
-      server: 
-      - mafe
       date: 
-      - Wed, 03 Aug 2011 15:17:32 GMT
-      vary: 
-      - Accept-Language
+      - Sun, 09 Jun 2013 08:19:12 GMT
+      expires: 
+      - Sun, 09 Jun 2013 08:24:12 GMT
       cache-control: 
       - public, max-age=300
-    body: |
-      {
-         "predictions" : [
-            {
-               "description" : "Narrows Coffee Shop, 4th Avenue, NY, United States",
-               "id" : "6f8e40d1101da10ec5c5499e3c068bd1d7288fb5",
-               "matched_substrings" : [
-                  {
-                     "length" : 6,
-                     "offset" : 8
-                  }
-               ],
-               "reference" : "CnRqAAAAtpnfY9G9cesdyJhP3NTXGYXeslzB5QGKjtaewFbySFZ1Msq2sBS-UQNe4eW7KzVh8ZumBH9GOFx50kcnhpDAVbz9REmBAlQP73WNQ_mQZ-B1RvPzsEt5Y0zlqnO11eiZRbiY59nM-wUs0p9CdpeuARIQgpgtDIXrt_fvQF8ECnZzpRoUKWo9ed41KsvHU8iiL6BLo8aOJec",
-               "terms" : [
-                  {
-                     "offset" : 0,
-                     "value" : "Narrows Coffee Shop"
-                  },
-                  {
-                     "offset" : 21,
-                     "value" : "4th Avenue"
-                  },
-                  {
-                     "offset" : 33,
-                     "value" : "NY"
-                  },
-                  {
-                     "offset" : 37,
-                     "value" : "United States"
-                  }
-               ],
-               "types" : [ "establishment" ]
-            },
-            {
-               "description" : "Best Coffee Shop, 5th Avenue, NY, United States",
-               "id" : "422aa675b71e6ed07132170b0132fd5a66e836ba",
-               "matched_substrings" : [
-                  {
-                     "length" : 6,
-                     "offset" : 5
-                  }
-               ],
-               "reference" : "CnRnAAAAtLEJZvWFn4VgfohDDwjQtb3qTC8Q6tR7HnBKrb8ihonIrYItxP4Be9Em58rLwvDLV_3beNgeAw8Fpg-bbWbdmcQljuXTJwJ_6DIegAH_NqSF2ZbXtyBNasCzpbYulpryIo0YAHIbzlcdzsHtwUVu8hIQ33zYNA06DMb8_mu3s4i8OBoUpQz0fFevpg0CraJYRQ6FNAo5nCs",
-               "terms" : [
-                  {
-                     "offset" : 0,
-                     "value" : "Best Coffee Shop"
-                  },
-                  {
-                     "offset" : 18,
-                     "value" : "5th Avenue"
-                  },
-                  {
-                     "offset" : 30,
-                     "value" : "NY"
-                  },
-                  {
-                     "offset" : 34,
-                     "value" : "United States"
-                  }
-               ],
-               "types" : [ "establishment" ]
-            }
-         ],
-         "status" : "OK"
-      }
+      vary: 
+      - Accept-Language
+      server: 
+      - mafe
+      x-xss-protection: 
+      - 1; mode=block
+      x-frame-options: 
+      - SAMEORIGIN
+      connection: 
+      - close
+    body: 
+      encoding: US-ASCII
+      string: |
+        {
+           "predictions" : [
+              {
+                 "description" : "The Coffee Foundry, West 4th Street, New York, NY, United States",
+                 "id" : "51be4d8ac4ff2414a06ab18f04603d9c0017b166",
+                 "matched_substrings" : [
+                    {
+                       "length" : 6,
+                       "offset" : 4
+                    }
+                 ],
+                 "reference" : "CoQBeQAAAFtWgSf0T-_eoGjwrviqDll3U8_cHZIvDyESiUabAPdTTdrQsmyUOgMDz5mavSBvEeItHnfOwZc_gV6WVShywUMo16SXfrbQZThy_m_qtmv3cmGJvw38Up-3X8ESknbBS5FO7YP6N--NSgEvuGFngofEvRjiYq6GXASVkOXlNXtOEhArZmbGgTyeMipcQ4CYAi6xGhRlhYNJJ41TRUlthU2IK4L3GMboCQ",
+                 "terms" : [
+                    {
+                       "offset" : 0,
+                       "value" : "The Coffee Foundry"
+                    },
+                    {
+                       "offset" : 20,
+                       "value" : "West 4th Street"
+                    },
+                    {
+                       "offset" : 37,
+                       "value" : "New York"
+                    },
+                    {
+                       "offset" : 47,
+                       "value" : "NY"
+                    },
+                    {
+                       "offset" : 51,
+                       "value" : "United States"
+                    }
+                 ],
+                 "types" : [ "establishment" ]
+              },
+              {
+                 "description" : "G M Coffee Co, New York, NY, United States",
+                 "id" : "026280a7d283bb69ba14489c89e1a669c38f46cc",
+                 "matched_substrings" : [
+                    {
+                       "length" : 6,
+                       "offset" : 4
+                    }
+                 ],
+                 "reference" : "CnRiAAAAWaeT8prHyCPTnduO7jLGtxuz6PugrdNeb59sSk79VeNMAWwnEQ17rgfiMnor8V04wy10OdU0ryW4KsOAjzpo4mxgV3J8Tp_RVKKDzrEM-9YkI5O1vYapYICvB-1OiPggBBd0SOjatQLhQGUQFsFJqRIQQU8rA3XE3tHcWO1CQuvq-hoUquIztCuTVvFGaE5PL5855IXRCgY",
+                 "terms" : [
+                    {
+                       "offset" : 0,
+                       "value" : "G M Coffee Co"
+                    },
+                    {
+                       "offset" : 15,
+                       "value" : "New York"
+                    },
+                    {
+                       "offset" : 25,
+                       "value" : "NY"
+                    },
+                    {
+                       "offset" : 29,
+                       "value" : "United States"
+                    }
+                 ],
+                 "types" : [ "establishment" ]
+              },
+              {
+                 "description" : "Landmark Coffee Shop, Grand Street, New York, NY, United States",
+                 "id" : "9fbb100abd8300d77b0cd6babc31f2b74e5e8f2a",
+                 "matched_substrings" : [
+                    {
+                       "length" : 6,
+                       "offset" : 9
+                    }
+                 ],
+                 "reference" : "CoQBeAAAAGPMZZIluFmDTs-fqK7HuIvbNPF8QL91Yx2uqYfS9TL2D64xATPyfQBfBewSxBNka-FyWXhjn8yUCyj46SLkcZIloh2QBeFxD7LxIWKflL8J6-J_6brnb7-Q6z8MFiLRtzTNlWsiJO4xb42EJa9RDWXTYsCYRxxH2lqao7eVcyX8EhDCUBg0LU3MdaKJg5eSxsBlGhT-C4na3Ce9gFd4VUVoe2PfsW3k5A",
+                 "terms" : [
+                    {
+                       "offset" : 0,
+                       "value" : "Landmark Coffee Shop"
+                    },
+                    {
+                       "offset" : 22,
+                       "value" : "Grand Street"
+                    },
+                    {
+                       "offset" : 36,
+                       "value" : "New York"
+                    },
+                    {
+                       "offset" : 46,
+                       "value" : "NY"
+                    },
+                    {
+                       "offset" : 50,
+                       "value" : "United States"
+                    }
+                 ],
+                 "types" : [ "establishment" ]
+              },
+              {
+                 "description" : "Westside Coffee Shop II, Church Street, New York, NY, United States",
+                 "id" : "2ec7b63bf3fb4856e6369102ec9728cbe45beee7",
+                 "matched_substrings" : [
+                    {
+                       "length" : 6,
+                       "offset" : 9
+                    }
+                 ],
+                 "reference" : "CoQBewAAAO8LcCt9mjXthrHy8HUrw9Xch7Gb0_O0OSF6N9zDj1RbN8Du6VsWGVZKhGNCIEe8PqlFTfj3Aml9an_O7SkLkZZ1ypJXfji5cDSCrvJQeRgbABOU1Gt7O1lyy5Aoz6a3f_mQl0Mf-anNjTXVfPJh3sDJ1FrQUsFhkTvinQhTRmtiEhDLNtb0Px0lV0Fr9hoXPm1XGhRRNKM8AwxmWaHUePWgGbeXi_gwMQ",
+                 "terms" : [
+                    {
+                       "offset" : 0,
+                       "value" : "Westside Coffee Shop II"
+                    },
+                    {
+                       "offset" : 25,
+                       "value" : "Church Street"
+                    },
+                    {
+                       "offset" : 40,
+                       "value" : "New York"
+                    },
+                    {
+                       "offset" : 50,
+                       "value" : "NY"
+                    },
+                    {
+                       "offset" : 54,
+                       "value" : "United States"
+                    }
+                 ],
+                 "types" : [ "establishment" ]
+              },
+              {
+                 "description" : "Coffee Shop, Union Square West, New York, NY, United States",
+                 "id" : "35478ed26d7b236f3a4d2e597256a30af214bbeb",
+                 "matched_substrings" : [
+                    {
+                       "length" : 6,
+                       "offset" : 0
+                    }
+                 ],
+                 "reference" : "CoQBdAAAAKy1QZHRssDS6wnsAIsVUhlHfGWpvlbku91YGVxtBW-cD422zg7U0RiGmfgBlnWvfz2B36YiF8xRevIaFawkiUHWr4AlWQ7quijLKr1cYEMFwkBVdavt147D2k44J9f1WFfFuK4p5Wnqg2fBbl3x4Ag_DFVosGGq6LXlH13c0lg7EhDVTMmD4H7amMvtJS3G_K7GGhQ8h5zkDHZnGvWbGMjjAbkeg8Sjjg",
+                 "terms" : [
+                    {
+                       "offset" : 0,
+                       "value" : "Coffee Shop"
+                    },
+                    {
+                       "offset" : 13,
+                       "value" : "Union Square West"
+                    },
+                    {
+                       "offset" : 32,
+                       "value" : "New York"
+                    },
+                    {
+                       "offset" : 42,
+                       "value" : "NY"
+                    },
+                    {
+                       "offset" : 46,
+                       "value" : "United States"
+                    }
+                 ],
+                 "types" : [ "establishment" ]
+              }
+           ],
+           "status" : "OK"
+        }
 
     http_version: "1.1"
+  recorded_at: Sun, 09 Jun 2013 08:19:12 GMT
+recorded_with: VCR 2.5.0
