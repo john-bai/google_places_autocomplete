@@ -2,7 +2,7 @@
 http_interactions: 
 - request: 
     method: get
-    uri: https://maps.googleapis.com/maps/api/place/autocomplete/json?sensor=false&input=Paris&types=geocode&key=foobar
+    uri: https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Paris&key=foobar&sensor=false
     body: 
       encoding: US-ASCII
       string: ""
@@ -13,159 +13,30 @@ http_interactions:
       code: 200
       message: OK
     headers: 
-      content-type: 
+      Content-Type: 
       - application/json; charset=UTF-8
-      date: 
-      - Sun, 09 Jun 2013 08:19:13 GMT
-      expires: 
-      - Sun, 09 Jun 2013 08:24:13 GMT
-      cache-control: 
-      - public, max-age=300
-      vary: 
+      Vary: 
       - Accept-Language
-      server: 
+      Date: 
+      - Mon, 10 Jun 2013 01:11:38 GMT
+      Server: 
       - mafe
-      x-xss-protection: 
+      Cache-Control: 
+      - private
+      X-Xss-Protection: 
       - 1; mode=block
-      x-frame-options: 
+      X-Frame-Options: 
       - SAMEORIGIN
-      connection: 
-      - close
+      Transfer-Encoding: 
+      - chunked
     body: 
-      encoding: US-ASCII
+      encoding: ASCII-8BIT
       string: |
         {
-           "predictions" : [
-              {
-                 "description" : "Paris, France",
-                 "id" : "691b237b0322f28988f3ce03e321ff72a12167fd",
-                 "matched_substrings" : [
-                    {
-                       "length" : 5,
-                       "offset" : 0
-                    }
-                 ],
-                 "reference" : "CjQlAAAAbxWQKeLK2bB02Pz7b7qs58917h-IUG6o1ax3o4yndwpRen4bDG9j-Sgltjhk_pBXEhAF6_Lwh1wgcovNN2sLN_sXGhQh7a8leoI3PZ2pytmUkMO5UkQ70Q",
-                 "terms" : [
-                    {
-                       "offset" : 0,
-                       "value" : "Paris"
-                    },
-                    {
-                       "offset" : 7,
-                       "value" : "France"
-                    }
-                 ],
-                 "types" : [ "locality", "political", "geocode" ]
-              },
-              {
-                 "description" : "Paris, TX, United States",
-                 "id" : "518e47f3d7f39277eb3bc895cb84419c2b43b5ac",
-                 "matched_substrings" : [
-                    {
-                       "length" : 5,
-                       "offset" : 0
-                    }
-                 ],
-                 "reference" : "CjQwAAAA18vpsIq0s0k9ExIZAVhe-wEAjrDyltCuPA9bfI4uu5U0ZE65mup_Q4M6RB9efwjYEhC5A36ztiv9H4hIDlTL41UFGhSui1KnlCYRgNsvF8UBuRfnEPhvaA",
-                 "terms" : [
-                    {
-                       "offset" : 0,
-                       "value" : "Paris"
-                    },
-                    {
-                       "offset" : 7,
-                       "value" : "TX"
-                    },
-                    {
-                       "offset" : 11,
-                       "value" : "United States"
-                    }
-                 ],
-                 "types" : [ "locality", "political", "geocode" ]
-              },
-              {
-                 "description" : "13th arrondissement of Paris, Paris, France",
-                 "id" : "97839cdf53574bead8b09c2d2c58874131f5814f",
-                 "matched_substrings" : [
-                    {
-                       "length" : 28,
-                       "offset" : 0
-                    }
-                 ],
-                 "reference" : "ClRDAAAA5rr36cEI1HIjsllIzsClPIFOh2VQaYxzs0_M3npll8_C-xkRTkpglbPCYfWrTZSsQGOQnFB1Kga4_5eG4BWyn-m_cD3CF7ZzqlAh4MkNo5ESEE-Aj8FNLvgDo083jS2T6MsaFIZ2okdY4RF8p5JWhAnTA24MxpAY",
-                 "terms" : [
-                    {
-                       "offset" : 0,
-                       "value" : "13th arrondissement of Paris"
-                    },
-                    {
-                       "offset" : 30,
-                       "value" : "Paris"
-                    },
-                    {
-                       "offset" : 37,
-                       "value" : "France"
-                    }
-                 ],
-                 "types" : [ "sublocality", "political", "geocode" ]
-              },
-              {
-                 "description" : "15th arrondissement of Paris, Paris, France",
-                 "id" : "ca585551d6b81b094ffa5f8493af37f5f05fd2e4",
-                 "matched_substrings" : [
-                    {
-                       "length" : 28,
-                       "offset" : 0
-                    }
-                 ],
-                 "reference" : "ClRDAAAA7M1Q-OMCsY3kh1Tl_i8IzwpBpTby1gIqkIePRIZl8z1gxZh_C4PbVO8AbAx3JwQdWTw3Jao9-gjIIaxDtP7soqpk9QAGW-WtzRau8J2nTlESEJJ6ThiboYIbWsv5w6w_G0QaFHD_D9_aigr3YFzHKFkov2lOAfi8",
-                 "terms" : [
-                    {
-                       "offset" : 0,
-                       "value" : "15th arrondissement of Paris"
-                    },
-                    {
-                       "offset" : 30,
-                       "value" : "Paris"
-                    },
-                    {
-                       "offset" : 37,
-                       "value" : "France"
-                    }
-                 ],
-                 "types" : [ "sublocality", "political", "geocode" ]
-              },
-              {
-                 "description" : "14th arrondissement of Paris, Paris, France",
-                 "id" : "927a09599f0500060670e51a860b6217b954e586",
-                 "matched_substrings" : [
-                    {
-                       "length" : 28,
-                       "offset" : 0
-                    }
-                 ],
-                 "reference" : "ClRDAAAAlsfm9beVSZIq0IXf5TbKu60VMHxSP1xao18pEM3sT5WisvTOM2kcjXB4R0JsUorIt41kWSWEbNp0o5cgKeI2HpeUv4TuVLVTaB72U1m9hSoSELZf8qlAWGj1bW3-bSUitVcaFLmUQ0Xyb-UTDytyLk5PwQXEL2rg",
-                 "terms" : [
-                    {
-                       "offset" : 0,
-                       "value" : "14th arrondissement of Paris"
-                    },
-                    {
-                       "offset" : 30,
-                       "value" : "Paris"
-                    },
-                    {
-                       "offset" : 37,
-                       "value" : "France"
-                    }
-                 ],
-                 "types" : [ "sublocality", "political", "geocode" ]
-              }
-           ],
-           "status" : "OK"
+           "predictions" : [],
+           "status" : "REQUEST_DENIED"
         }
 
-    http_version: "1.1"
-  recorded_at: Sun, 09 Jun 2013 08:19:13 GMT
+    http_version: 
+  recorded_at: Mon, 10 Jun 2013 01:11:38 GMT
 recorded_with: VCR 2.5.0

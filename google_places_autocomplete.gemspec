@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
   
-  s.add_dependency 'httparty'
-  s.add_dependency 'hashie'  
+  s.add_dependency 'curb'
+  s.add_dependency 'activesupport'
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'fakeweb'
+  s.add_development_dependency 'webmock'
   s.add_development_dependency 'vcr'  
 end

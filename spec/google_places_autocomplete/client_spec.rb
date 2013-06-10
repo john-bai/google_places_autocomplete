@@ -1,45 +1,50 @@
 require 'spec_helper'
 
-describe GooglePlacesAutocomplete::Client do
-  
-  it 'should not initialize without an api_key' do
-    lambda { GooglePlacesAutocomplete::Client.new }.should raise_error
-  end
+vcr_options = { :cassette_name => "autocomplete", :record => :new_episodes }
 
-  it 'should initialize with an api_key' do
-    @client = GooglePlacesAutocomplete::Client.new(:api_key => "foobar")
-    @client.api_key.should == "foobar"
-  end
+describe GooglePlacesAutocomplete::Client, :vcr => vcr_options do
   
-  context "request an autocomplete with location bias", :vcr => { :cassette_name => 'location_bias' } do
+  describe "#autocomplete" do
+    
+    context "without api key configured" do
+    
+      it 'should raise an error if api key is not passed as a parameter' do
+        lambda { GooglePlacesAutocomplete::Client.autocomplete(:input => "Paris") }.should raise_error
+      end
 
-    it 'should request autocomplete' do    
-      @client = GooglePlacesAutocomplete::Client.new(:api_key => "foobar")
-      @autocomplete = @client.autocomplete(:lat => 40.606654, :lng => -74.036865, :input => "coffee", :types => "establishment", :radius => 50)
-      @autocomplete.predictions.size.should == 5
-      @autocomplete.predictions.first.description.should == "The Coffee Foundry, West 4th Street, New York, NY, United States"
+      it 'should not raise an error if api key is passed as a parameter' do
+        lambda { 
+          GooglePlacesAutocomplete::Client.autocomplete(
+            :input => "Paris",
+            :key   => "foobar"
+          )
+        }.should_not raise_error
+      end
     end
-  end
-
-  context "request an autocomplete", :vcr => { :cassette_name => 'autocomplete' } do
-
-    it 'should request autocomplete' do    
-      @client = GooglePlacesAutocomplete::Client.new(:api_key => "foobar")
-      @autocomplete = @client.autocomplete(:input => "Paris", :types => "geocode")
-      @autocomplete.predictions.size.should == 5
-      @autocomplete.predictions.first.description.should == 'Paris, France'
-    end
-  end
-  
-  context "request an autocomplete with bounds", :vcr => { :cassette_name => 'with_bounds' } do
-
-    it 'should request autocomplete with bounds parameter' do    
-      @client = GooglePlacesAutocomplete::Client.new(:api_key => "foobar")
-      @autocomplete = @client.autocomplete(:input => "Peter Luger", :types => "establishment", 
-                                           :sw_bounds => {:lat => 40.606654, :lng => -74.036865}, 
-                                           :ne_bounds => {:lat => 40.744655, :lng => -73.831558})
+    
+    context "with api key configured" do
       
-      @autocomplete.predictions.size.should == 2
+      before(:all) do
+        GooglePlacesAutocomplete.configure do |c|
+          c.api_key = "foobar"
+        end
+      end
+      
+      it 'should raise an error if input is not passed as a parameter' do
+        lambda { GooglePlacesAutocomplete::Client.autocomplete }.should raise_error
+      end
+      
+      it 'should raise an error if input parameter is nil' do
+        lambda { GooglePlacesAutocomplete::Client.autocomplete(:input => nil) }.should raise_error
+      end
+      
+      it 'should raise an error if sensor parameter is nil' do
+        lambda { GooglePlacesAutocomplete::Client.autocomplete(:sensor => nil) }.should raise_error
+      end
+      
+      it "should return a string containing the json response from Google" do
+        GooglePlacesAutocomplete::Client.autocomplete(:input => "Paris").should be_an_instance_of(String)
+      end
     end
   end
 end
